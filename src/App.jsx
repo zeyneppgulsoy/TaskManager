@@ -13,6 +13,19 @@ function App() {
       setInput('')
     }
   }
+  // Delete task by id
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+    // Toggle task completion status
+  const toggleComplete = (id) => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    )
+  }
+
 
 
   return (
