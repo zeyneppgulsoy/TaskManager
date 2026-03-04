@@ -34,8 +34,8 @@ function App() {
     <>
 
 
-<div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", background: "linear-gradient(135deg, #7b2ff2 0%, #f357a8 100%)" }}>
-  <div className="card shadow p-4" style={{ width: "400px", borderRadius: "20px" }}>
+<div className="app-container">
+  <div className="card app-card">
     {/* Task input form for adding new tasks */}
     <h2 className="mb-4 text-center">New Task</h2>
     <div className="input-group mb-3">
@@ -56,17 +56,17 @@ function App() {
 
     {/* Task list for displaying added tasks */}
     {todos.length === 0 ? (
-      <p className="text-center" style={{ color: "#999", marginTop: "20px" }}>No tasks yet.</p>
+      <p className="empty-state">No tasks yet.</p>
     ) : (
       todos.map((todo) => (
         <div key={todo.id} className="card mb-2">
           <div className="card-body d-flex justify-content-between align-items-center">
             <span>{todo.text}</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span className="task-actions">
               {/* Icon for marking task as completed */}
               <span
-                onClick={() => toggleComplete(todo.id)}
-                style={{ cursor: 'pointer' }}>
+                className="check-icon"
+                onClick={() => toggleComplete(todo.id)}>
                 <FontAwesomeIcon icon={faCheck} color={todo.completed ? "green" : "lightgray"} />
               </span>
               {/* Delete button for removing tasks */}

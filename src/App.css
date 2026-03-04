@@ -1,0 +1,41 @@
+/* Main container with gradient background */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7b2ff2 0%, #f357a8 100%);
+}
+
+/* Card styling */
+.app-card {
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Empty state text */
+.empty-state {
+  color: #999;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Task actions container */
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Checkmark icon */
+.check-icon {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.check-icon:hover {
+  transform: scale(1.2);
+}
+
