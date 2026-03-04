@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 import './App.css'
 
 
@@ -31,6 +33,8 @@ function App() {
   return (
     <>
 
+
+
 {/* Task input form for adding new tasks */}
 <div className="container mt-5">
   <h2 className="mb-4">Add Task</h2>
@@ -61,21 +65,24 @@ function App() {
     todos.map((todo) => (
       <div key={todo.id} className="card mb-2">
         <div className="card-body d-flex justify-content-between align-items-center">
-          {/* Checkbox for marking task as completed */}
-          <input
-            type="checkbox"
-            checked={todo.completed || false}
-            onChange={() => toggleComplete(todo.id)}
-            className="form-check-input me-2"
-          />
-          <span>{todo.text}</span>
+        
+       <span>{todo.text}</span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+         {/* Icon for marking task as completed */}
+          <span
+          onClick={() => toggleComplete(todo.id)}
+          style={{ cursor: 'pointer', marginRight: '8px' }}>
+          <FontAwesomeIcon icon={faCheck} color={todo.completed ? "green" : "lightgray"} />
+          </span>
+       
+         
           {/* Delete button for removing tasks */}
           <button
             className="btn btn-danger btn-sm"
-            onClick={() => deleteTodo(todo.id)}
-          >
-            Delete
+            onClick={() => deleteTodo(todo.id)}>
+            <FontAwesomeIcon icon={faTrash} />
           </button>
+          </span>
         </div>
       </div>
     ))
