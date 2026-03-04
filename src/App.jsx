@@ -34,59 +34,53 @@ function App() {
     <>
 
 
+<div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", background: "linear-gradient(135deg, #7b2ff2 0%, #f357a8 100%)" }}>
+  <div className="card shadow p-4" style={{ width: "400px", borderRadius: "20px" }}>
+    {/* Task input form for adding new tasks */}
+    <h2 className="mb-4 text-center">New Task</h2>
+    <div className="input-group mb-3">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Enter a new task..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button
+        className="btn btn-primary"
+        onClick={addTodo}
+      >
+        Add
+      </button>
+    </div>
 
-{/* Task input form for adding new tasks */}
-<div className="container mt-5">
-  <h2 className="mb-4">Add Task</h2>
-  <div className="input-group mb-3">
-    <input
-      type="text"
-      className="form-control"
-      placeholder="Enter a new task..."
-      value={input}
-      onChange={(e) => setInput(e.target.value)}
-    />
-    <button
-      className="btn btn-primary"
-      onClick={addTodo}
-    >
-      Add
-    </button>
-  </div>
-</div>
-
-
-{/* Task list for displaying added tasks */}
-<div className="mt-4">
-  <h3>Task List</h3>
-  {todos.length === 0 ? (
-    <p>No tasks yet.</p>
-  ) : (
-    todos.map((todo) => (
-      <div key={todo.id} className="card mb-2">
-        <div className="card-body d-flex justify-content-between align-items-center">
-        
-       <span>{todo.text}</span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-         {/* Icon for marking task as completed */}
-          <span
-          onClick={() => toggleComplete(todo.id)}
-          style={{ cursor: 'pointer', marginRight: '8px' }}>
-          <FontAwesomeIcon icon={faCheck} color={todo.completed ? "green" : "lightgray"} />
-          </span>
-       
-         
-          {/* Delete button for removing tasks */}
-          <button
-            className="btn btn-danger btn-sm"
-            onClick={() => deleteTodo(todo.id)}>
-            <FontAwesomeIcon icon={faTrash} />
-          </button>
-          </span>
+    {/* Task list for displaying added tasks */}
+    {todos.length === 0 ? (
+      <p className="text-center" style={{ color: "#999", marginTop: "20px" }}>No tasks yet.</p>
+    ) : (
+      todos.map((todo) => (
+        <div key={todo.id} className="card mb-2">
+          <div className="card-body d-flex justify-content-between align-items-center">
+            <span>{todo.text}</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {/* Icon for marking task as completed */}
+              <span
+                onClick={() => toggleComplete(todo.id)}
+                style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faCheck} color={todo.completed ? "green" : "lightgray"} />
+              </span>
+              {/* Delete button for removing tasks */}
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => deleteTodo(todo.id)}>
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </span>
+          </div>
         </div>
-      </div>
-    ))
-  )}
+      ))
+    )}
+  </div>
 </div>
 
 
