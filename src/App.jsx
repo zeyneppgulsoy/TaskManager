@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-    
+
 {/* Task input form for adding new tasks */}
 <div className="container mt-5">
   <h2 className="mb-4">Add Task</h2>
@@ -51,6 +51,21 @@ function App() {
   </div>
 </div>
 
+{/* Task list for displaying added tasks */}
+<div className="mt-4">
+  <h3>Task List</h3>
+  {todos.length === 0 ? (
+    <p>No tasks yet.</p>
+  ) : (
+    todos.map((todo) => (
+      <div key={todo.id} className="card mb-2">
+        <div className="card-body d-flex justify-content-between align-items-center">
+          <span>{todo.text}</span>
+        </div>
+      </div>
+    ))
+  )}
+</div>
 
       
     </>
