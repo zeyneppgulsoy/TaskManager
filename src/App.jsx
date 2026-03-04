@@ -30,6 +30,28 @@ function App() {
 
   return (
     <>
+    
+{/* Task input form for adding new tasks */}
+<div className="container mt-5">
+  <h2 className="mb-4">Add Task</h2>
+  <div className="input-group mb-3">
+    <input
+      type="text"
+      className="form-control"
+      placeholder="Enter a new task..."
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+    />
+    <button
+      className="btn btn-primary"
+      onClick={addTodo}
+    >
+      Add
+    </button>
+  </div>
+</div>
+
+
       
     </>
   )
