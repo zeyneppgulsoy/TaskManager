@@ -34,25 +34,25 @@ function App() {
     <>
 
 
-<div className="app-container">
-  <div className="card app-card">
-    {/* Task input form for adding new tasks */}
-    <h2 className="mb-4 text-center">New Task</h2>
-    <div className="input-group mb-3">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Enter a new task..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button
-        className="btn btn-primary"
-        onClick={addTodo}
-      >
-        Add
-      </button>
-    </div>
+    <div className="app-container">
+      <div className="card app-card">
+        {/* Task input form for adding new tasks */}
+        <h2 className="new-task-heading">New Task</h2>
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter a new task..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button
+            className="add-btn"
+            onClick={addTodo}
+          >
+            Add
+          </button>
+        </div>
 
     {/* Task list for displaying added tasks */}
     {todos.length === 0 ? (

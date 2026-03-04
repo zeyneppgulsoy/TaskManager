@@ -11,7 +11,7 @@
 /* Card styling */
 .app-card {
   width: 400px;
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
@@ -40,3 +40,44 @@
   transform: scale(1.2);
 }
 
+/* New Task heading styling */
+.new-task-heading {
+  color: #1e3a5f;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 8px rgba(31, 38, 135, 0.25);
+}
+
+/* Add button styling */
+.add-btn {
+  background: linear-gradient(135deg, #1e3a5f 0%, #6b7280 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.37);
+  font-weight: bold;
+  transition: background 0.2s, box-shadow 0.2s;
+  min-width: 90px;
+  padding: 8px 0;
+  border-radius: 8px;
+}
+.add-btn:hover {
+  background: linear-gradient(135deg, #6b7280 0%, #1e3a5f 100%);
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.5);
+}
+
+.input-group .add-btn {
+  border-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+.input-group {
+  margin-bottom: 24px;
+  gap: 8px;
+}
