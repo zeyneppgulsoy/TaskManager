@@ -52,7 +52,6 @@ function App() {
 </div>
 
 
-
 {/* Task list for displaying added tasks */}
 <div className="mt-4">
   <h3>Task List</h3>
@@ -62,6 +61,13 @@ function App() {
     todos.map((todo) => (
       <div key={todo.id} className="card mb-2">
         <div className="card-body d-flex justify-content-between align-items-center">
+          {/* Checkbox for marking task as completed */}
+          <input
+            type="checkbox"
+            checked={todo.completed || false}
+            onChange={() => toggleComplete(todo.id)}
+            className="form-check-input me-2"
+          />
           <span>{todo.text}</span>
           {/* Delete button for removing tasks */}
           <button
