@@ -51,6 +51,8 @@ function App() {
   </div>
 </div>
 
+
+
 {/* Task list for displaying added tasks */}
 <div className="mt-4">
   <h3>Task List</h3>
@@ -61,11 +63,27 @@ function App() {
       <div key={todo.id} className="card mb-2">
         <div className="card-body d-flex justify-content-between align-items-center">
           <span>{todo.text}</span>
+          {/* Delete button for removing tasks */}
+          <button
+            className="btn btn-danger btn-sm"
+            onClick={() => deleteTodo(todo.id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     ))
   )}
 </div>
+
+
+
+
+
+
+
+
+
 
       
     </>
